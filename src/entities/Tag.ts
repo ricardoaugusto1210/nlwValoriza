@@ -4,13 +4,12 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn
-} from "typeorm";
+} from 'typeorm'
 
-import { v4 as uuid } from "uuid"
+import { v4 as uuid } from 'uuid'
 
-@Entity("tags")
+@Entity('tags')
 class Tag {
-
   @PrimaryColumn()
   readonly id: string;
 
@@ -23,9 +22,9 @@ class Tag {
   @UpdateDateColumn()
   updated_at: Date;
 
-  constructor() {
+  constructor () {
     if (!this.id) {
-      this.id = uuid();
+      this.id = uuid()
     }
   }
 }
